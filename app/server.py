@@ -68,7 +68,7 @@ async def analyze(request):
     img = open_image(BytesIO(img_bytes))
     prediction, pred_idx, probs = learn.predict(img)
     probability = str(round(float((max(probs)*100).numpy()), 2)) + "%" #
-    return JSONResponse({'result': str(prediction), 'probability': str(probabilty)})
+    return JSONResponse({'result': str(prediction), 'probability': str(probability)})
  
 
 
