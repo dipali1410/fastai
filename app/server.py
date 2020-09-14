@@ -65,11 +65,11 @@ async def analyze(request):
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
     img = open_image(BytesIO(img_bytes))
-    pred_class, pred_idx, outputs = model.predict(img)
+    pred_class, pred_idx, outputs = learn.predict(img)
     pred_probs = outputs / sum(outputs)
     pred_probs = pred_probs.tolist()
     predictions = []
-    for image_class, output, prob in zip(model.data.classes, outputs.tolist(), pred_probs):
+    for image_class, output, prob in zip(learn.data.classes, outputs.tolist(), pred_probs):
         output = round(output, 1)
         prob = round(prob, 2)
         predictions.append(
