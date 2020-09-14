@@ -42,19 +42,19 @@ body {
 button.choose-file-button {
     width: 200px;
     height: 40px;
-    border-radius: 2px;
+    border-radius: 4px;
     background-color: #ffffff;
-    border: solid 1px #7052CB;
+    border: solid 1px #1CA7C9;
     font-size: 13px;
-    color: #7052CB;
+    color: #1CA7C9;
 }
 
 button.analyze-button {
     width: 200px;
     height: 40px;
-    border: solid 1px #7052CB;
-    border-radius: 2px;
-    background-color: #7052CB;
+    border: solid 1px #1CA7C9;
+    border-radius: 4px;
+    background-color: #1CA7C9;
     font-size: 13px;
     color: #ffffff;
 }
