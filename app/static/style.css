@@ -62,9 +62,3 @@ button.analyze-button {
 button:focus {
     outline: 0;
 }
-
-
-img.test {
-    width: 100%;
-    height: auto;
-}
