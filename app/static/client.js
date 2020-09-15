@@ -30,15 +30,13 @@ function analyze() {
     if (this.readyState === 4) {
       var response = JSON.parse(e.target.responseText);
       el("result-label").innerHTML = `Result = ${response["result"]}, Probability = ${response["probability"]}`;
+      var img = document.createElement('img'); ###
+      el("img").src = ${response["url"]};
+      document.getElementById('body').appendChild(img);###
     }
-    { var response = JSON.parse(e.target.responseText);
-      var img = document.createElement('img'); 
-      img.src = ${response["url"]}; 
-      document.getElementById('body').appendChild(img); 
-        }
     el("analyze-button").innerHTML = "Analyze";
   };
-
+  
   var fileData = new FormData();
   fileData.append("file", uploadFiles[0]);
   xhr.send(fileData);
