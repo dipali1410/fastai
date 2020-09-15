@@ -31,6 +31,11 @@ function analyze() {
       var response = JSON.parse(e.target.responseText);
       el("result-label").innerHTML = `Result = ${response["result"]}, Probability = ${response["probability"]}`;
     }
+    { var response = JSON.parse(e.target.responseText);
+      var img = document.createElement('img'); 
+      img.src = ${response["url"]}; 
+      document.getElementById('body').appendChild(img); 
+        }
     el("analyze-button").innerHTML = "Analyze";
   };
 
