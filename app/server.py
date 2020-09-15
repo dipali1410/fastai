@@ -68,7 +68,22 @@ async def analyze(request):
     img_bytes = await (img_data['file'].read())
     img = open_image(BytesIO(img_bytes))
     prediction, pred_idx, probs = learn.predict(img)
-    probability = str(round(float((max(probs)*100).numpy()), 2)) + "%" #
+    probability = str(round(float((max(probs)*100).numpy()), 2)) + "%"
+    if prediction == 'Jacob Elordi or Noah':
+     url = "https://i.insider.com/5f22ebfe19182415af6d1122?width=1100&format=jpeg&auto=webp"
+    elif prediction == 'Joel Courtney or Lee':
+     url = "https://i.pinimg.com/originals/38/20/70/3820706a112ac32ae61f0b8f6557c6e6.jpg"
+    elif prediction == 'Joey King or Elle':
+     url = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/joey-king-index-social-1-1596649980.png"
+    elif prediction == 'Maise Richardson-sellers or Chloe':
+     url = "https://assets.popbuzz.com/2020/29/who-plays-chloe-winthrop-in-the-kissing-booth-2---maisie-richardson-sellers-1595579770-view-0.png"
+    elif prediction == 'Meganne Young or Rachel':
+     url = "https://u6c3f6j7.rocketcdn.me/wp-content/uploads/2020/07/Meganne-Young.jpg"
+    elif prediction == 'Molly Ringwald known or Sara Flynn':
+     url = "https://s.yimg.com/ny/api/res/1.2/znXmy0unC5NjdHwkxHrWvg--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/http://media.zenfs.com/en/homerun/feed_manager_auto_publish_494/5ac89786c8bc4a636404db2f996b725c"
+    else:
+     url = "https://i.pinimg.com/736x/fe/3f/fa/fe3ffa0fa9b2c08ff4b2a1cab75670dc.jpg"
+     
     return JSONResponse({'result': str(prediction), 'probability': str(probability)})
  
 
