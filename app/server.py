@@ -84,7 +84,7 @@ async def analyze(request):
     else:
      url = "https://i.pinimg.com/736x/fe/3f/fa/fe3ffa0fa9b2c08ff4b2a1cab75670dc.jpg"
      
-    return JSONResponse({'result': str(prediction), 'probability': str(probability)})
+    return JSONResponse({'result': str(prediction), 'probability': str(probability), 'url': str(url)})
  
 
 
